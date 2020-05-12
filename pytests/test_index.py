@@ -4,7 +4,7 @@ import pytest
 import importlib
 
 # importing objects from the jupyter notebook here
-from ipynb.fs.full.index import countries, colors, players, captains, home_team_players, forwards, player_with_highest_num, player_names
+from ipynb.fs.full.index import countries, colors, players, captains, home_team_players, away_team_forwards, player_with_highest_num, player_names
 
 
 # tests to ensure correct environment is loaded
@@ -44,12 +44,12 @@ def test_home_team_players_list():
     assert len(home_team_players) == 11
     assert home_team_players == return_home_team_players()
 
-def test_forwards_list():
-    assert forwards is not None
-    assert type(forwards) == type([])
-    assert type(forwards[0]) == type({})
-    assert len(forwards) == 3
-    assert forwards == [{'name': 'Mathew LECKIE', 'captain': False, 'shirt_number': 7, 'position': 'Forward'}, {'name': 'Robbie KRUSE', 'captain': False, 'shirt_number': 10, 'position': 'Forward'}, {'name': 'Andrew NABBOUT', 'captain': False, 'shirt_number': 11, 'position': 'Forward'}]
+def test_away_team_forwards_list():
+    assert away_team_forwards is not None
+    assert type(away_team_forwards) == type([])
+    assert type(away_team_forwards[0]) == type({})
+    assert len(away_team_forwards) == 3
+    assert away_team_forwards == [{'name': 'Mathew LECKIE', 'captain': False, 'shirt_number': 7, 'position': 'Forward'}, {'name': 'Robbie KRUSE', 'captain': False, 'shirt_number': 10, 'position': 'Forward'}, {'name': 'Andrew NABBOUT', 'captain': False, 'shirt_number': 11, 'position': 'Forward'}]
 
 def test_player_with_highest_num_dict():
     assert player_with_highest_num is not None
